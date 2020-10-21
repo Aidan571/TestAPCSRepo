@@ -21,16 +21,34 @@ for(int i = 0; i < arr.length; i++){
 }
 return result;
 }
-public static String arrDeepToString(int[][] arr){
-String result = "";
-String nums1 = arrToString(arr[0]);
-String nums2 = arrToString(arr[1]);
-result = "{" + nums1 + ", " + nums2 + "}";
-return result;
+public static String arrayDeepToString(int[][] arr){
+String result = "{";
+for(int i = 0; i < arr.length; i++){
+    result = result + arrToString(arr[i]) + ", ";
+}
+return result + "}";
+}
+public static int[][] create2DArray(int rows, int cols, int maxValue){
+  int[][] arr = new int[rows][cols];
+  for(int i = 0; i < cols; i++){
+    for(int h = 0; h < rows; h ++){
+      arr[h][i] = 3;
+    }
+  }
+  return arr;
 }
   public static void main(String[]args){
-    printLoop(5);
-    printLoop(10);
-    printLoop(3);
+    int[]x = {1};
+    int[]y = {1,2};
+    int[]w = {1,2,3};
+    int[]z = {1,2,3,4};
+    int[]v = {1,2,3,4,5};
+    int[][]a = {x,y};
+    int[][]b = {w,v};
+    System.out.println(arrayDeepToString(a));
+    System.out.println(arrayDeepToString(b));
+    System.out.println(arrayDeepToString(a).replace("},","},\n"));
+    System.out.println(arrayDeepToString(b).replace("},","},\n"));
+    System.out.println(arrayDeepToString(create2DArray(5,3,5)).replace("},","},\n"));
   }
 }
