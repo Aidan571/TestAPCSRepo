@@ -7,6 +7,7 @@ public class Demo{
     }
     System.out.println();
   }
+
 }
 public static String arrToString(int[] arr){
 String result = "{";
@@ -39,11 +40,13 @@ public static int[][] create2DArray(int rows, int cols, int maxValue){
   return arr;
 }
 public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue){
-  int myCols = (int)(Math.random() * ((cols-0)+1));
-  int[][] arr = new int[rows][myCols];
-  for(int i = 0; i < myCols; i++){
-    for(int h =  0; h < rows; h++){
-      arr[h][i] = (int)(Math.random() * ((maxValue-0)+1));
+  int[][] arr = new int[rows][];
+  int holder;
+  for(int i = 0; i < rows; i++){
+    holder = (int)(Math.random() * ((cols-0)+1));
+    arr[i] = new int[holder];
+    for(int h = 0; h < holder; h++){
+      arr[i][h] = (int)(Math.random() * ((maxValue-0)+1));
     }
   }
   return arr;
@@ -55,7 +58,8 @@ public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue){
     }
     else
     argument = Integer.parseInt(args[0]);
-    int[]x = {1};
+    printLoop(argument);
+    /*int[]x = {1};
     int[]y = {1,2};
     int[]w = {1,2,3};
     int[]z = {1,2,3,4};
@@ -67,6 +71,6 @@ public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue){
     System.out.println(arrayDeepToString(a).replace("},","},\n"));
     System.out.println(arrayDeepToString(b).replace("},","},\n"));
     System.out.println(arrayDeepToString(create2DArray(argument,3,5)).replace("},","},\n"));
-    System.out.println(arrayDeepToString(create2DArrayRandomized(10,10,10)).replace("},","},\n"));
+    System.out.println(arrayDeepToString(create2DArrayRandomized(10,10,10)).replace("},","},\n"));*/
   }
 }
