@@ -32,7 +32,7 @@ public static int[][] create2DArray(int rows, int cols, int maxValue){
   int[][] arr = new int[rows][cols];
   for(int i = 0; i < cols; i++){
     for(int h = 0; h < rows; h ++){
-      arr[h][i] = 3;
+      arr[h][i] = (int)(Math.random() * ((maxValue-0)+1));
     }
   }
   return arr;
